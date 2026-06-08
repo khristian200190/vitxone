@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Implementación SAP Business One - VitxOne</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+      width: 0;
+      z-index: 60;
+      transition: width 0.2s ease-out;
+    }
+    .floating-glow {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(40px);
+      opacity: 0.6;
+      animation: float 12s ease-in-out infinite;
+    }
+    .floating-glow:nth-child(1) { width: 180px; height: 180px; background: rgba(56, 189, 248, 0.18); top: -40px; right: 12%; animation-delay: 0s; }
+    .floating-glow:nth-child(2) { width: 140px; height: 140px; background: rgba(67, 56, 202, 0.18); bottom: -30px; left: 10%; animation-delay: 2s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-24px) translateX(12px); }
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-slate-950 text-white">
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="fixed w-full top-0 z-50 bg-slate-950/90 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="img/logo.png" alt="VitxOne Logo" class="h-20 md:h-24 w-auto object-contain drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">
+      </div>
+
+      <ul class="hidden lg:flex space-x-8 text-base md:text-lg font-semibold text-slate-300">
+        <li><a href="#inicio" class="hover:text-cyan-400 transition">Inicio</a></li>
+        <li><a href="#beneficios" class="hover:text-cyan-400 transition">Beneficios</a></li>
+        <li><a href="#servicios" class="hover:text-cyan-400 transition">Servicios</a></li>
+        <li><a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a></li>
+      </ul>
+
+      <a href="https://wa.me/51966363263" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-5 py-3 rounded-xl font-bold transition">
+        Solicitar Demo
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="min-h-screen flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 pt-56 md:pt-64 overflow-hidden">
+    <div class="floating-glow"></div>
+    <div class="floating-glow"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- LEFT -->
+      <div class="reveal opacity-0 translate-y-8 transition duration-700 max-w-xl">
+        <p class="text-cyan-400 uppercase tracking-[0.3em] mb-4 font-semibold text-sm sm:text-base">
+          Consultoría SAP • Implementación Completa
+        </p>
+
+        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight sm:leading-snug mb-8">
+          SAP Business One
+          <span class="text-cyan-400 transition-opacity duration-500">para tu Empresa</span>
+        </h2>
+
+        <p class="text-base sm:text-lg text-slate-300 mb-10 leading-relaxed max-w-xl">
+          Implementamos SAP Business One de manera integral: desde la consultoría inicial hasta el soporte continuo.
+          Optimiza tus procesos empresariales con la solución ERP líder en el mercado.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#servicios" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-6 py-4 rounded-2xl font-bold text-center transition">
+            Ver Servicios
+          </a>
+
+          <a href="https://wa.me/51966363263" target="_blank" class="w-full sm:w-auto border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-950 px-6 py-4 rounded-2xl font-bold text-center transition">
+            Consultar Ahora
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="relative reveal opacity-0 translate-y-8 transition duration-700 w-full">
+        <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl hover:-translate-y-2 transition-transform duration-500">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+
+            <div class="bg-slate-800 rounded-2xl p-6 hover:bg-slate-700 transition">
+              <h3 class="text-cyan-400 font-bold text-lg mb-2">Implementación Completa</h3>
+              <p class="text-slate-400 text-sm">Desde análisis hasta go-live con soporte incluido.</p>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-6 hover:bg-slate-700 transition">
+              <h3 class="text-cyan-400 font-bold text-lg mb-2">Personalización</h3>
+              <p class="text-slate-400 text-sm">Adaptamos el sistema a tus procesos específicos.</p>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-6 hover:bg-slate-700 transition">
+              <h3 class="text-cyan-400 font-bold text-lg mb-2">Capacitación</h3>
+              <p class="text-slate-400 text-sm">Entrenamiento completo para tu equipo.</p>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-6 hover:bg-slate-700 transition">
+              <h3 class="text-cyan-400 font-bold text-lg mb-2">Soporte Continuo</h3>
+              <p class="text-slate-400 text-sm">Mantenimiento y actualizaciones permanentes.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section id="beneficios" class="py-28 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl sm:text-5xl font-extrabold mb-6">Beneficios de SAP Business One</h2>
+        <p class="text-slate-400 max-w-3xl mx-auto text-base sm:text-lg">
+          Una solución ERP completa que transforma la gestión de tu empresa.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-cyan-400 transition reveal opacity-0 translate-y-8 duration-700">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-2xl font-bold mb-3">Visión 360°</h3>
+          <p class="text-slate-400">Control total de finanzas, inventario, ventas y producción en una sola plataforma.</p>
+        </div>
+
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-cyan-400 transition reveal opacity-0 translate-y-8 duration-700">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-2xl font-bold mb-3">Eficiencia Operativa</h3>
+          <p class="text-slate-400">Automatiza procesos manuales y reduce errores humanos significativamente.</p>
+        </div>
+
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-cyan-400 transition reveal opacity-0 translate-y-8 duration-700">
+          <div class="text-4xl mb-4">📈</div>
+          <h3 class="text-2xl font-bold mb-3">Crecimiento Escalable</h3>
+          <p class="text-slate-400">Crece con tu negocio: desde PYMEs hasta empresas medianas sin límites.</p>
+        </div>
+
+        <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 hover:border-cyan-400 transition reveal opacity-0 translate-y-8 duration-700">
+          <div class="text-4xl mb-4">🔒</div>
+          <h3 class="text-2xl font-bold mb-3">Seguridad Empresarial</h3>
+          <p class="text-slate-400">Datos protegidos con estándares internacionales y backups automáticos.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-28 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-extrabold mb-6">Nuestros Servicios SAP B1</h2>
+        <p class="text-slate-400 max-w-3xl mx-auto text-base sm:text-lg">
+          Consultoría completa para implementar y mantener SAP Business One en tu empresa.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 text-center">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Implementación</h3>
+          <p class="text-4xl font-extrabold mb-6">Desde $5,000</p>
+          <ul class="text-slate-300 space-y-2 mb-8">
+            <li>Análisis de requerimientos</li>
+            <li>Configuración del sistema</li>
+            <li>Migración de datos</li>
+            <li>Capacitación inicial</li>
+            <li>Go-live y soporte</li>
+          </ul>
+          <a href="https://wa.me/51966363263" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-6 py-3 rounded-2xl font-bold transition block">
+            Solicitar Cotización
+          </a>
+        </div>
+
+        <div class="bg-slate-900 p-8 rounded-3xl border-2 border-cyan-400 text-center relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-cyan-400 text-slate-950 px-4 py-1 rounded-full text-sm font-bold">Más Demandado</div>
+          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Personalización</h3>
+          <p class="text-4xl font-extrabold mb-6">Desde $2,000</p>
+          <ul class="text-slate-300 space-y-2 mb-8">
+            <li>Desarrollo de add-ons</li>
+            <li>Integraciones con terceros</li>
+            <li>Reportes personalizados</li>
+            <li>Workflows automatizados</li>
+            <li>Crystal Reports</li>
+          </ul>
+          <a href="https://wa.me/51966363263" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-6 py-3 rounded-2xl font-bold transition block">
+            Solicitar Cotización
+          </a>
+        </div>
+
+        <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 text-center">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Soporte Anual</h3>
+          <p class="text-4xl font-extrabold mb-6">$1,200<span class="text-lg">/año</span></p>
+          <ul class="text-slate-300 space-y-2 mb-8">
+            <li>Mantenimiento correctivo</li>
+            <li>Actualizaciones del sistema</li>
+            <li>Soporte técnico 24/7</li>
+            <li>Capacitación continua</li>
+            <li>Monitoreo proactivo</li>
+          </ul>
+          <a href="https://wa.me/51966363263" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-6 py-3 rounded-2xl font-bold transition block">
+            Contratar Soporte
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contacto" class="py-28 bg-cyan-500 text-slate-950 text-center">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-5xl font-extrabold mb-6">
+        ¿Listo para digitalizar tu empresa con SAP Business One?
+      </h2>
+
+      <p class="text-xl mb-10 font-medium">
+        Más de 25 empresas ya confían en VitxOne para sus implementaciones SAP B1.
+      </p>
+
+      <div class="flex flex-col lg:flex-row justify-center items-center gap-4 mb-12">
+        <a href="https://wa.me/51966363263" target="_blank" class="bg-slate-950 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-slate-900 transition">
+          Consulta Gratuita
+        </a>
+        <a href="#servicios" class="border border-slate-950 text-slate-950 hover:bg-slate-950 hover:text-white px-10 py-5 rounded-2xl font-bold text-lg transition">
+          Ver Servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">VITXONE</h3>
+      <p class="text-slate-500 mb-4">
+        Infraestructura • Soporte • Desarrollo • Hosting • Soluciones Empresariales
+      </p>
+      <p class="text-slate-600 text-sm">
+        © 2026 VitxOne.com | Todos los derechos reservados
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
