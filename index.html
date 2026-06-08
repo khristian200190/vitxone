@@ -3,191 +3,236 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VitxOne | Sistema para Restaurantes</title>
+  <title>VitxOne | Software para Restaurantes</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box}
-    html,body{width:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,sans-serif;background:#fff;color:#071126}
-    .title-font{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:.02em}
-    .glow{box-shadow:0 0 18px rgba(0,213,255,.55),0 0 45px rgba(0,123,255,.35)}
-    .blue-card{background:linear-gradient(135deg,#05204f,#06112a 65%,#020817);box-shadow:0 12px 35px rgba(0,25,80,.35), inset 0 0 0 1px rgba(0,213,255,.5)}
-    .icon-ball{background:radial-gradient(circle at 35% 25%,#1fe8ff,#0877ff 45%,#061449 78%);box-shadow:0 0 16px rgba(0,213,255,.75), inset 0 0 18px rgba(255,255,255,.18)}
-    .hero-shape{clip-path:ellipse(70% 60% at 82% 28%)}
-    .feature-row{display:flex;gap:18px;align-items:flex-start}
-    @media(max-width:767px){
-      .mobile-wrap{padding-left:20px!important;padding-right:20px!important}
-      .hero-title{font-size:clamp(64px,20vw,88px);line-height:.82;white-space:normal;max-width:100%;overflow-wrap:break-word}
-      .hero-sub{font-size:26px;line-height:1.18;max-width:100%;overflow-wrap:break-word}
-      .feature-row{gap:14px}
-      .feature-copy{min-width:0;width:100%}
-      .feature-copy p,.feature-copy h3{max-width:100%;overflow-wrap:break-word}
-      .icon-ball{width:64px!important;height:64px!important;min-width:64px!important}
+    html,body{margin:0;width:100%;overflow-x:hidden;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;color:#111827;background:#fff}
+    .container{max-width:1240px;margin:auto;padding-left:24px;padding-right:24px}
+    .btn{background:#0b8cff;color:#fff;border-radius:16px;padding:18px 28px;font-weight:900;display:inline-flex;align-items:center;gap:12px;box-shadow:0 12px 30px rgba(11,140,255,.22)}
+    .btn:hover{transform:translateY(-2px)}
+    .pill{letter-spacing:.16em;font-weight:900;font-size:14px;color:#06214a;text-transform:uppercase}
+    .card{border:1px solid #eef2f7;border-radius:28px;background:#fff;box-shadow:0 18px 45px rgba(15,23,42,.06)}
+    .icon{width:48px;height:48px;border-radius:16px;background:#e8f5ff;color:#0b8cff;display:grid;place-items:center;font-size:24px}
+    .logo-img{height:58px;width:auto;object-fit:contain}
+    .nav-link{font-weight:600;color:#30333b}
+    .nav-link:hover{color:#0b8cff}
+    .hero-title{font-size:clamp(44px,6vw,76px);line-height:1.05;letter-spacing:-.055em;font-weight:900}
+    .section-title{font-size:clamp(34px,4vw,58px);line-height:1.08;letter-spacing:-.045em;font-weight:900}
+    .muted{color:#647084}
+    @media(max-width:768px){
+      .container{padding-left:18px;padding-right:18px}
+      .logo-img{height:48px}
+      .mobile-hide{display:none!important}
+      .btn{width:100%;justify-content:center;padding:16px 20px}
+      .hero-title{font-size:43px}
+      .hero-media{margin-top:28px}
     }
   </style>
 </head>
-
 <body>
-<header class="bg-white/95 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
-  <nav class="max-w-[1240px] mx-auto px-5 md:px-8 py-3 flex items-center justify-between">
-    <a href="#inicio"><img src="img/logo.png" alt="VitxOne" class="h-16 md:h-20 w-auto object-contain"></a>
-    <ul class="hidden lg:flex items-center gap-8 text-sm font-black uppercase">
-      <li><a href="#funciones" class="hover:text-blue-600">Funcionalidades</a></li>
-      <li><a href="#beneficios" class="hover:text-blue-600">Beneficios</a></li>
-      <li><a href="#modulos" class="hover:text-blue-600">Módulos</a></li>
-      <li><a href="#planes" class="hover:text-blue-600">Planes</a></li>
-      <li><a href="#contacto" class="hover:text-blue-600">Contacto</a></li>
-    </ul>
-    <a href="https://wa.me/51966363263" target="_blank" class="hidden sm:inline-flex rounded-xl bg-blue-600 text-white font-black px-5 py-3 glow">Solicitar demo</a>
-  </nav>
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+  <div class="container h-[88px] flex items-center justify-between">
+    <a href="#inicio" class="flex items-center gap-3">
+      <img src="img/logo.png" alt="VitxOne" class="logo-img">
+    </a>
+
+    <nav class="mobile-hide flex items-center gap-9 text-[17px]">
+      <a class="nav-link" href="#funcionalidades">Funcionalidades</a>
+      <a class="nav-link" href="#precios">Precios</a>
+      <a class="nav-link" href="#modulos">Soluciones</a>
+      <a class="nav-link" href="#faq">FAQ</a>
+      <a class="nav-link" href="#contacto">Contacto</a>
+    </nav>
+
+    <a href="https://wa.me/51966363263" target="_blank" class="mobile-hide bg-[#0b8cff] text-white rounded-2xl px-7 py-4 font-black">
+      Agendar demostración
+    </a>
+  </div>
 </header>
 
-<main id="inicio" class="relative overflow-hidden bg-gradient-to-b from-white via-[#f7fbff] to-white">
-  <div class="hidden lg:block absolute top-0 right-[-180px] w-[850px] h-[620px] bg-[#061126] hero-shape"></div>
-  <div class="hidden lg:block absolute top-0 right-0 w-[700px] h-[510px] hero-shape overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center opacity-70"></div>
-    <div class="absolute inset-0 bg-gradient-to-l from-[#020817]/10 to-[#020817]/80"></div>
-  </div>
+<main id="inicio" class="pt-16 md:pt-28 pb-20">
+  <div class="container grid lg:grid-cols-2 gap-14 items-center">
+    <section>
+      <p class="pill mb-8">PLATAFORMA PARA RESTAURANTES</p>
 
-  <section class="max-w-[1240px] mx-auto mobile-wrap px-5 md:px-8 py-8 md:py-16 lg:min-h-[720px] grid lg:grid-cols-2 gap-10 items-center">
-    <div class="relative z-10 w-full min-w-0">
-      <div class="inline-block rounded-xl bg-blue-600 text-white text-xl md:text-2xl font-black px-5 py-3 glow mb-6">
-        SISTEMA PARA
-      </div>
-
-      <h1 class="title-font hero-title text-[92px] md:text-[130px] lg:text-[150px] leading-[.82] text-[#061126] mb-5">
-        RESTAURANTES
+      <h1 class="hero-title max-w-[650px]">
+        El software para restaurantes más completo para tu negocio
       </h1>
 
-      <p class="hero-sub text-2xl md:text-3xl font-black md:font-extrabold leading-tight mb-4 text-[#071126]">
-        Gestiona tu restaurante de manera <span class="text-blue-500">fácil, rápida y eficiente</span>
+      <p class="mt-7 text-xl md:text-2xl leading-relaxed muted max-w-[660px]">
+        Pedidos, cocina, inventario, caja, reportes y facturación funcionando juntos en un solo sistema.
+        Sin papelitos perdidos y sin descuadres al cierre.
       </p>
 
-      <p class="text-slate-600 text-base md:text-lg max-w-xl mb-8">
-        Punto de venta, comandas, cocina, inventario, reportes, facturación y control de usuarios en una sola plataforma.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 mb-10">
-        <a href="https://wa.me/51966363263" target="_blank" class="text-center rounded-xl bg-blue-600 text-white font-black px-7 py-4 glow">¡Solicita tu demo!</a>
-        <a href="#funciones" class="text-center rounded-xl border-2 border-slate-900 text-slate-900 font-black px-7 py-4">Ver funciones</a>
+      <div class="mt-10">
+        <a href="https://wa.me/51966363263" target="_blank" class="btn text-lg">
+          Agendar demostración <span>→</span>
+        </a>
       </div>
 
-      <div id="funciones" class="space-y-5 w-full max-w-[560px]">
-        <div class="feature-row">
-          <div class="icon-ball w-16 h-16 rounded-full grid place-items-center text-white text-3xl shrink-0">▣</div>
-          <div class="feature-copy border-b border-sky-300 pb-4">
-            <h3 class="font-black text-lg md:text-xl">PUNTO DE VENTA</h3>
-            <p class="text-slate-700">Toma órdenes, genera tickets y acepta múltiples formas de pago.</p>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="icon-ball w-16 h-16 rounded-full grid place-items-center text-white text-3xl shrink-0">⌂</div>
-          <div class="feature-copy border-b border-sky-300 pb-4">
-            <h3 class="font-black text-lg md:text-xl">GESTIÓN DE PEDIDOS</h3>
-            <p class="text-slate-700">Organiza comandas, estados de pedidos y tiempos de entrega.</p>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="icon-ball w-16 h-16 rounded-full grid place-items-center text-white text-3xl shrink-0">◇</div>
-          <div class="feature-copy border-b border-sky-300 pb-4">
-            <h3 class="font-black text-lg md:text-xl">INVENTARIO</h3>
-            <p class="text-slate-700">Controla insumos, recetas y stock en tiempo real.</p>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="icon-ball w-16 h-16 rounded-full grid place-items-center text-white text-3xl shrink-0">▥</div>
-          <div class="feature-copy border-b border-sky-300 pb-4">
-            <h3 class="font-black text-lg md:text-xl">REPORTES Y ESTADÍSTICAS</h3>
-            <p class="text-slate-700">Conoce tus ventas, productos más vendidos y rendimiento.</p>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="icon-ball w-16 h-16 rounded-full grid place-items-center text-white text-3xl shrink-0">♙</div>
-          <div class="feature-copy">
-            <h3 class="font-black text-lg md:text-xl">USUARIOS Y PERMISOS</h3>
-            <p class="text-slate-700">Administra tu equipo y establece permisos por rol.</p>
-          </div>
-        </div>
+      <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-slate-500 font-medium">
+        <span>Listo en minutos</span><span>•</span>
+        <span>Soporte en español</span><span>•</span>
+        <span>Funciona en la nube</span>
       </div>
-    </div>
+    </section>
 
-    <div class="relative hidden md:block z-10">
-      <div class="relative mx-auto max-w-[650px]">
-        <div class="absolute -inset-6 rounded-full bg-blue-600/20 blur-3xl"></div>
-        <div class="relative bg-[#111827] rounded-[2rem] p-4 border-[12px] border-[#171b2a] shadow-2xl">
-          <div class="bg-white rounded-xl p-6">
-            <div class="grid grid-cols-4 gap-4 mb-6">
-              <div class="rounded-xl shadow p-4"><p class="text-xs text-slate-600">Ventas</p><b class="text-xl">S/5,680</b></div>
-              <div class="rounded-xl shadow p-4"><p class="text-xs text-slate-600">Pedidos</p><b class="text-xl">32</b></div>
-              <div class="rounded-xl shadow p-4"><p class="text-xs text-slate-600">Ticket</p><b class="text-xl">S/177</b></div>
-              <div class="rounded-xl shadow p-4"><p class="text-xs text-slate-600">Mesas</p><b class="text-xl">8/15</b></div>
-            </div>
-            <h3 class="font-black text-xl mb-3">Dashboard</h3>
-            <div class="rounded-xl bg-sky-50 p-5 h-48 flex items-end gap-4">
-              <div class="w-12 bg-cyan-300 h-16 rounded-t"></div>
-              <div class="w-12 bg-cyan-400 h-24 rounded-t"></div>
-              <div class="w-12 bg-sky-500 h-20 rounded-t"></div>
-              <div class="w-12 bg-blue-500 h-32 rounded-t"></div>
-              <div class="w-12 bg-cyan-400 h-28 rounded-t"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="absolute -right-8 bottom-[-35px] bg-[#101523] border-[9px] border-[#171b2a] rounded-[2rem] p-3 w-44 shadow-2xl">
-          <div class="bg-white rounded-2xl p-4 text-sm">
-            <h4 class="font-black mb-3">Menú</h4>
-            <div class="space-y-3">
-              <div class="bg-slate-50 rounded-xl p-3">🍔 <b>Hamburguesa</b><br>S/15.00</div>
-              <div class="bg-slate-50 rounded-xl p-3">🍕 <b>Pizza</b><br>S/16.00</div>
-              <div class="bg-slate-50 rounded-xl p-3">🥤 <b>Limonada</b><br>S/6.00</div>
-            </div>
-          </div>
-        </div>
+    <section class="hero-media">
+      <div class="relative rounded-[32px] overflow-hidden shadow-2xl">
+        <img
+          src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1400&auto=format&fit=crop"
+          alt="Restaurante"
+          class="w-full h-[330px] md:h-[430px] object-cover"
+        >
+        <div class="absolute inset-0 bg-black/10"></div>
+        <button class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white/90 grid place-items-center shadow-xl">
+          <span class="text-[#0b8cff] text-4xl ml-1">▶</span>
+        </button>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </main>
 
-<section class="max-w-[1240px] mx-auto px-5 md:px-8 py-4">
-  <div class="blue-card rounded-[2rem] px-6 md:px-8 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-7 text-white">
-    <div class="flex gap-4 items-center"><div class="text-5xl text-cyan-300">☁</div><div><b>EN LA NUBE</b><p class="text-sm text-slate-300">Accede desde cualquier dispositivo.</p></div></div>
-    <div class="flex gap-4 items-center"><div class="text-5xl text-cyan-300">♜</div><div><b>SEGURO</b><p class="text-sm text-slate-300">Tus datos siempre protegidos.</p></div></div>
-    <div class="flex gap-4 items-center"><div class="text-5xl text-cyan-300">⚙</div><div><b>FÁCIL DE USAR</b><p class="text-sm text-slate-300">Interfaz intuitiva y rápida.</p></div></div>
-    <div class="flex gap-4 items-center"><div class="text-5xl text-cyan-300">☏</div><div><b>SOPORTE</b><p class="text-sm text-slate-300">Acompañamiento por WhatsApp.</p></div></div>
-  </div>
-</section>
+<section id="funcionalidades" class="py-20 bg-[#f8fbff]">
+  <div class="container">
+    <div class="max-w-3xl">
+      <p class="pill mb-5">FUNCIONALIDADES</p>
+      <h2 class="section-title">Todo lo que tu restaurante necesita, en una sola plataforma</h2>
+      <p class="mt-5 text-xl muted">Diseñado para restaurantes, cafeterías, pollerías, cevicherías, bares, dark kitchens y cadenas.</p>
+    </div>
 
-<section id="beneficios" class="py-16 bg-gradient-to-b from-white to-sky-50">
-  <div class="max-w-[1240px] mx-auto px-5 md:px-8 text-center">
-    <p class="text-blue-600 font-black uppercase tracking-widest text-sm">Todo lo que tu restaurante necesita</p>
-    <h2 class="text-4xl md:text-6xl font-black mb-10">EN UN SOLO <span class="text-blue-600">SISTEMA</span></h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-      <div class="bg-white rounded-2xl p-7 shadow-xl"><div class="icon-ball mx-auto w-20 h-20 rounded-full grid place-items-center text-white text-4xl mb-5">ϟ</div><b>MÁS RAPIDEZ</b><p class="text-sm mt-3">Atiende más mesas en menos tiempo.</p></div>
-      <div class="bg-white rounded-2xl p-7 shadow-xl"><div class="icon-ball mx-auto w-20 h-20 rounded-full grid place-items-center text-white text-4xl mb-5">$</div><b>MENOS COSTOS</b><p class="text-sm mt-3">Reduce pérdidas y optimiza recursos.</p></div>
-      <div class="bg-white rounded-2xl p-7 shadow-xl"><div class="icon-ball mx-auto w-20 h-20 rounded-full grid place-items-center text-white text-4xl mb-5">↗</div><b>MÁS VENTAS</b><p class="text-sm mt-3">Toma decisiones con datos reales.</p></div>
-      <div class="bg-white rounded-2xl p-7 shadow-xl"><div class="icon-ball mx-auto w-20 h-20 rounded-full grid place-items-center text-white text-4xl mb-5">☺</div><b>MEJOR EXPERIENCIA</b><p class="text-sm mt-3">Clientes más satisfechos.</p></div>
-      <div class="bg-white rounded-2xl p-7 shadow-xl"><div class="icon-ball mx-auto w-20 h-20 rounded-full grid place-items-center text-white text-4xl mb-5">✓</div><b>CONTROL TOTAL</b><p class="text-sm mt-3">Gestiona desde donde estés.</p></div>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card p-8"><div class="icon">🧾</div><h3 class="mt-6 text-2xl font-black">Punto de venta POS</h3><p class="mt-3 muted leading-relaxed">Toma pedidos, gestiona mesas, descuentos, pagos y tickets desde una pantalla simple.</p></div>
+      <div class="card p-8"><div class="icon">🍳</div><h3 class="mt-6 text-2xl font-black">Cocina y comandas</h3><p class="mt-3 muted leading-relaxed">Envía pedidos a cocina automáticamente y organiza la preparación por áreas.</p></div>
+      <div class="card p-8"><div class="icon">📦</div><h3 class="mt-6 text-2xl font-black">Inventario</h3><p class="mt-3 muted leading-relaxed">Controla insumos, recetas, costos, stock mínimo y movimientos de almacén.</p></div>
+      <div class="card p-8"><div class="icon">📊</div><h3 class="mt-6 text-2xl font-black">Reportes</h3><p class="mt-3 muted leading-relaxed">Ventas por día, productos más vendidos, cierres de caja, gastos y rendimiento.</p></div>
+      <div class="card p-8"><div class="icon">🧑‍💼</div><h3 class="mt-6 text-2xl font-black">Usuarios y permisos</h3><p class="mt-3 muted leading-relaxed">Controla qué puede ver o hacer cada usuario: mozos, cajeros, cocina y administración.</p></div>
+      <div class="card p-8"><div class="icon">☁️</div><h3 class="mt-6 text-2xl font-black">Sistema en la nube</h3><p class="mt-3 muted leading-relaxed">Accede desde computadora, tablet o celular, desde cualquier lugar.</p></div>
     </div>
   </div>
 </section>
 
-<section id="contacto" class="bg-[#03102b] text-white py-14">
-  <div class="max-w-[1240px] mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10 items-center">
+<section id="modulos" class="py-20 bg-white">
+  <div class="container grid lg:grid-cols-2 gap-14 items-center">
     <div>
-      <h2 class="text-4xl md:text-6xl font-black">Agenda una demo</h2>
-      <p class="text-slate-300 text-lg mt-4">Controla pedidos, cocina, inventario, caja y facturación desde una sola plataforma.</p>
+      <p class="pill mb-5">SOLUCIONES</p>
+      <h2 class="section-title">Controla la operación completa de tu restaurante</h2>
+      <p class="mt-6 text-xl muted leading-relaxed">
+        VitxOne centraliza ventas, pedidos, cocina, inventario y administración para que tengas control real de tu negocio.
+      </p>
+
+      <div class="mt-8 space-y-5">
+        <div class="flex gap-4"><div class="icon shrink-0">✓</div><div><h3 class="font-black text-xl">Menos errores en pedidos</h3><p class="muted mt-1">El pedido llega claro a cocina y se reduce la comunicación manual.</p></div></div>
+        <div class="flex gap-4"><div class="icon shrink-0">✓</div><div><h3 class="font-black text-xl">Más control de caja</h3><p class="muted mt-1">Registra ingresos, egresos, aperturas, cierres y medios de pago.</p></div></div>
+        <div class="flex gap-4"><div class="icon shrink-0">✓</div><div><h3 class="font-black text-xl">Mejores decisiones</h3><p class="muted mt-1">Identifica tus platos más vendidos, horarios fuertes y rentabilidad.</p></div></div>
+      </div>
     </div>
-    <a href="https://wa.me/51966363263" target="_blank" class="glow inline-flex justify-center rounded-2xl border border-cyan-300 bg-blue-600/30 px-6 py-5 text-xl md:text-3xl font-black">☏ ¡SOLICITA TU DEMO!</a>
+
+    <div class="card p-6 md:p-8 bg-gradient-to-br from-white to-sky-50">
+      <div class="rounded-3xl bg-[#071126] p-5 shadow-xl">
+        <div class="bg-white rounded-2xl p-5">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm muted">Ventas</p><b class="text-2xl">S/5,680</b></div>
+            <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm muted">Pedidos</p><b class="text-2xl">32</b></div>
+            <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm muted">Ticket</p><b class="text-2xl">S/177</b></div>
+            <div class="rounded-2xl bg-slate-50 p-4"><p class="text-sm muted">Mesas</p><b class="text-2xl">8/15</b></div>
+          </div>
+          <div class="mt-6 rounded-2xl bg-sky-50 p-6 h-52 flex items-end gap-5">
+            <div class="w-12 bg-sky-300 h-20 rounded-t-xl"></div>
+            <div class="w-12 bg-sky-400 h-28 rounded-t-xl"></div>
+            <div class="w-12 bg-blue-400 h-24 rounded-t-xl"></div>
+            <div class="w-12 bg-blue-600 h-36 rounded-t-xl"></div>
+            <div class="w-12 bg-cyan-400 h-32 rounded-t-xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer class="bg-black text-slate-400 py-8 text-center text-sm">
-  © 2026 VitxOne.com | Sistema POS para Restaurantes
+<section class="py-20 bg-[#071126] text-white">
+  <div class="container">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="text-sky-300 font-black tracking-[.16em] uppercase text-sm mb-5">IMPLEMENTACIÓN</p>
+      <h2 class="section-title">Empieza a operar en pocos pasos</h2>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-4 gap-5">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-7"><b class="text-sky-300">01</b><h3 class="text-2xl font-black mt-4">Crea tu cuenta</h3><p class="mt-3 text-slate-300">Registramos tu negocio y usuarios.</p></div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-7"><b class="text-sky-300">02</b><h3 class="text-2xl font-black mt-4">Configura tu carta</h3><p class="mt-3 text-slate-300">Agregamos platos, precios y categorías.</p></div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-7"><b class="text-sky-300">03</b><h3 class="text-2xl font-black mt-4">Activa caja</h3><p class="mt-3 text-slate-300">Medios de pago, impresoras y permisos.</p></div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-7"><b class="text-sky-300">04</b><h3 class="text-2xl font-black mt-4">Vende</h3><p class="mt-3 text-slate-300">Pedidos, cocina y reportes en tiempo real.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="precios" class="py-20 bg-white">
+  <div class="container">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="pill mb-5">PRECIOS</p>
+      <h2 class="section-title">Planes simples para crecer</h2>
+      <p class="mt-5 text-xl muted">Elige el plan ideal para tu operación.</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-3 gap-7">
+      <div class="card p-8"><h3 class="text-3xl font-black">Básico</h3><p class="muted mt-2">Para empezar rápido.</p><p class="text-5xl font-black my-7">S/99<span class="text-lg">/mes</span></p><ul class="space-y-3 muted"><li>✓ POS</li><li>✓ Comandas</li><li>✓ Carta digital</li><li>✓ 5 usuarios</li></ul><a href="https://wa.me/51966363263" class="btn mt-8 w-full justify-center">Empezar</a></div>
+      <div class="card p-8 border-2 border-[#0b8cff] relative"><span class="absolute -top-4 left-8 bg-[#0b8cff] text-white px-4 py-2 rounded-full font-black text-sm">Más elegido</span><h3 class="text-3xl font-black">Profesional</h3><p class="muted mt-2">Para controlar todo.</p><p class="text-5xl font-black my-7">S/119<span class="text-lg">/mes</span></p><ul class="space-y-3 muted"><li>✓ Todo del Básico</li><li>✓ Inventario</li><li>✓ Recetas y costos</li><li>✓ Reportes avanzados</li></ul><a href="https://wa.me/51966363263" class="btn mt-8 w-full justify-center">Solicitar demo</a></div>
+      <div class="card p-8"><h3 class="text-3xl font-black">Empresarial</h3><p class="muted mt-2">Para cadenas y franquicias.</p><p class="text-5xl font-black my-7">A medida</p><ul class="space-y-3 muted"><li>✓ Multi-sucursal</li><li>✓ Integraciones</li><li>✓ Soporte prioritario</li><li>✓ Capacitación</li></ul><a href="https://wa.me/51966363263" class="btn mt-8 w-full justify-center">Contactar</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="py-20 bg-[#f8fbff]">
+  <div class="container max-w-4xl">
+    <div class="text-center">
+      <p class="pill mb-5">FAQ</p>
+      <h2 class="section-title">Preguntas frecuentes</h2>
+    </div>
+    <div class="mt-10 space-y-4">
+      <details class="card p-6"><summary class="font-black cursor-pointer">¿Funciona desde celular?</summary><p class="mt-3 muted">Sí, puedes ingresar desde computadora, tablet o celular.</p></details>
+      <details class="card p-6"><summary class="font-black cursor-pointer">¿Sirve para varios locales?</summary><p class="mt-3 muted">Sí, puedes controlar varias sucursales y revisar reportes por local.</p></details>
+      <details class="card p-6"><summary class="font-black cursor-pointer">¿Incluye soporte?</summary><p class="mt-3 muted">Sí, brindamos acompañamiento y soporte por WhatsApp.</p></details>
+      <details class="card p-6"><summary class="font-black cursor-pointer">¿Puedo solicitar una demo?</summary><p class="mt-3 muted">Sí, puedes agendar una demostración para revisar el sistema.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="py-20 bg-white">
+  <div class="container grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="pill mb-5">CONTACTO</p>
+      <h2 class="section-title">Agenda una demostración gratuita</h2>
+      <p class="mt-5 text-xl muted">Te mostramos cómo VitxOne puede ayudarte a ordenar pedidos, caja, cocina e inventario.</p>
+      <a href="https://wa.me/51966363263" target="_blank" class="btn mt-9 text-lg">Hablar por WhatsApp →</a>
+    </div>
+
+    <form class="card p-7 grid gap-4">
+      <input class="border rounded-2xl px-5 py-4" placeholder="Nombre">
+      <input class="border rounded-2xl px-5 py-4" placeholder="Teléfono">
+      <input class="border rounded-2xl px-5 py-4" placeholder="Nombre del restaurante">
+      <select class="border rounded-2xl px-5 py-4">
+        <option>Tipo de negocio</option>
+        <option>Restaurante</option>
+        <option>Cafetería</option>
+        <option>Pollería</option>
+        <option>Cevichería</option>
+        <option>Bar</option>
+      </select>
+      <button type="button" onclick="window.open('https://wa.me/51966363263','_blank')" class="btn justify-center">Enviar solicitud</button>
+    </form>
+  </div>
+</section>
+
+<footer class="py-10 bg-[#071126] text-white">
+  <div class="container flex flex-col md:flex-row gap-4 justify-between items-center">
+    <img src="img/logo.png" alt="VitxOne" class="h-14 w-auto object-contain">
+    <p class="text-slate-300 text-sm">© 2026 VitxOne.com | Software para restaurantes</p>
+  </div>
 </footer>
+
 </body>
 </html>
